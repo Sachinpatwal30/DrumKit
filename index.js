@@ -1,20 +1,20 @@
 
 // detecting CLICK press
-var n = document.querySelectorAll(".drum").length;
+$(".drum").on("click",function(){
 
-for (var i = 0; i < n; i++) {
-   document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+   
+   makeSound(this.innerHTML);
+   makeAnimation(this.innerHTML);
 
-      makeSound(this.innerHTML);
-      makeAnimation(this.innerHTML);
 
-   })
-}
+})
 
 // detecting KEYBOARD press
-document.addEventListener("keypress", function (event) {
-   makeSound(event.key);
-   makeAnimation(event.key);
+$(document).on("keypress",(event)=>{
+
+
+    makeSound(event.key);
+    makeAnimation(event.key);
 
 })
 
@@ -65,11 +65,11 @@ function makeSound(key) {
 function makeAnimation(key)
 {
 
-        document.querySelector("."+key).classList.add("pressed");
+        $("."+key).addClass("pressed");
 
        setTimeout(function(){
 
-            document.querySelector("."+key).classList.remove("pressed");
+           $("."+key).removeClass("pressed");
         }, 100);
         
 
