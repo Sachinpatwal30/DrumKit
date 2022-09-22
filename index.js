@@ -67,7 +67,7 @@ function makeAnimation(key)
 
         $("."+key).addClass("pressed");
 
-       setTimeout(function(){
+       setTimeout(function(){                               //TimeOut function
 
            $("."+key).removeClass("pressed");
         }, 100);
